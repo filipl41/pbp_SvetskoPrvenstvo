@@ -69,11 +69,11 @@ create table Utakmica (
 	datum date not null,
 	poeniGost int not null,
 	poeniDomacin int not null,
-	poeniUkupno int not null,
+	poeniUkupno int as (poeniDomacin + poeniGost),
 	idSudije int not null references Sudija(idSudije),
 	domacin int not null references Grupa(idReprezentacija),
 	gost int not null references Grupa(idReprezentacija),
-	faza varchar(45) not null,
+	faza varchar(45) default "grupa",
 	check(ishod in (1, 2)),
 	check (faza in ("finale", "polufinale", "cetvrtfinale", "osmina","sesnestina" "grupa"))
 
