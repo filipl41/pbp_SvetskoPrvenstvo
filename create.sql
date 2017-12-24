@@ -80,6 +80,5 @@ create table Utakmica (
 );
 
 create table Nokaut_faza (
-	idUtakmice int not null references Utakmica(id),
-	idGrada int not null references Grad(idGrada)
+	idUtakmice int not null references Utakmica(id)
 );

@@ -114,3 +114,13 @@ insert into Igrac values
 (8, 'Mathias', 'Lessort', DATE '1995-7-4', 8),
 (9, 'Luka', 'Doncic', DATE '1998-1-12', 9),
 (10, 'Luis', 'Scola', DATE '1980-7-7', 10);
+
+
+insert into Statistika(brojPoena, brojAsistencija, brojBlokada, brojSkokova, brojPromasenihSuteva, brojIzgubljenihLopti, brojFaulova,id)
+			   values (12, 7, 0, 2, 4, 2, 1, 1),
+					  (20, 2,3, 10, 7, 1, 2, 2 ),
+					  (21, 6, 4, 9, 5, 1, 2, 3),
+					  (7, 1, 1, 4, 1, 0, 4, 4),
+					  (3, 0, 2, 8, 2, 2, 5, 5),
+					  (11, 3, 1, 6, 4, 2, 2, 6),
+					  (8, 0, 4, 9, 5, 2, 0, 7);
