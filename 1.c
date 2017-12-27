@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <mysql.h>
+#include <string.h>
 #define MAX_QUERY_LEN 1000
 #define MAX_STRING_ATT_LEN 45
 
@@ -42,8 +43,8 @@ int main(){
     tmp = red[0];
     int id_drzave = atoi(tmp);
     mysql_free_result (rezultat);
-    sprintf(query, "insert into Igrac values(%d, \"%s\", \"%s\", DATE \"%s\", \"%s\", %d)", max_id, ime, prezime, datum_rodjenja, reprezentacija, id_drzave);
-    printf("%s\n", query);
+    sprintf(query, "insert into Igrac values(%d, \"%s\", \"%s\", DATE \"%s\", %d)", max_id, ime, prezime, datum_rodjenja,  id_drzave);
+    //printf("%s\n", query);
     rezultat = executeQuery(konekcija, query);
     printf("Uspesno ste dodali igraca");
   }
