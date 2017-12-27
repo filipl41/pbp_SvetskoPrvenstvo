@@ -1,3 +1,4 @@
+USE SVETSKO_PRVENSTVO;
 
 insert into Drzava values
 (1, 'Serbia'),
