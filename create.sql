@@ -56,11 +56,15 @@ create table Grad (
 
 create table Grupa (
 	id varchar(45) not null,
+	idGrada int not null references Grad(idGrada)
+);
+
+create table ReprezentacijaUGrupi (
+	id varchar(45) not null,
 	bodovi int not null,
 	odigranoUtakmica int not null,
 	kosRazlika int not null,
-	idReprezentacija int not null references Reprezentacija(id),
-	idGrada int not null references Grad(idGrada)
+	idReprezentacija int not null references Reprezentacija(id)
 );
 
 create table Utakmica (
@@ -80,5 +84,5 @@ create table Utakmica (
 );
 
 create table Nokaut_faza (
-	idUtakmice int not null references Utakmica(id)
+	idGrada int not null references grad(idGrada)
 );

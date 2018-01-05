@@ -1,3 +1,4 @@
+use SVETSKO_PRVENSTVO;
 delimiter $
 
 create trigger utakmicaBI before insert on Utakmica 
@@ -26,21 +27,21 @@ for each row
 begin 
 if exists(select * from grupa g where g.idReprezentacija = new.domacin and g.odigranoUtakmica <= 5) 
 then 
-update Grupa 
+update ReprezentacijaUGrupi 
 set odigranoUtakmica = odigranoUtakmica + 1,
 kosRazlika = kosRazlika + new.poeniDomacin - new.poeniGost  
 where new.domacin = idReprezentacija; 
 
-update Grupa
+update ReprezentacijaUGrupi
 set odigranoUtakmica = odigranoUtakmica + 1,
 kosRazlika = kosRazlika + new.poeniGost - new.poeniDomacin
 where new.gost = idReprezentacija; 
 
-update Grupa 
+update ReprezentacijaUGrupi
 set bodovi = case when new.ishod = 1 then bodovi + 2 else bodovi + 1 end 
 where new.domacin = idReprezentacija;
 
-update Grupa
+update ReprezentacijaUGrupi
 set bodovi = case when new.ishod = 2 then bodovi + 2 else bodovi + 1 end 
 where new.gost = idReprezentacija;
 
